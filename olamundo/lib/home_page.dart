@@ -10,24 +10,34 @@ class HomePage extends StatefulWidget{
 
 class HomePageState extends State<HomePage>{
   int counter = 0;
-
   @override
-  Widget @override
   Widget build(BuildContext context) {
-    return Container(
-      child:Center(
-        child: GestureDetector(
-          child: Text('click: $counter'),
-          onTap:(){
-            setState(() {
-              counter++;
-              print(counter);
-            });
-          },
-        )
-      ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'App Flutter ADS',
+          )),
+          body:Center(
+          child: GestureDetector(
+            child: Text('click: $counter',style: TextStyle(fontSize:50)),
+            onTap:(){
+              setState(() {
+                counter++;
+                //print(counter);
+              });
+            },
+          )),
+          floatingActionButton: FloatingActionButton(
+            child:Icon(Icons.add_circle),
+            onPressed:(){
+              setState(() {
+                counter++;
+                //print(counter);
+              });
+
+            }
+
+          ),
     );
   }
-  
-  
 }
